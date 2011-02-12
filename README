@@ -1,0 +1,16 @@
+fastTemplate is a solution for looping JSON data over a pre-determined HTML template.
+
+Useage
+
+var myTemplate = new Y.fastTemplate({
+	data: mydata,
+	templateNode: Y.one('#template'),
+	wrapperNode: Y.one('#wrapper')
+});
+		
+myTemplate.process();
+
+Configuation
+data - a JSON set of data. fastTemplate will match sections in the HTML template that match the keys in the Data. a key name of firstName will match a section in the HTML of {firstName}.
+templateNode - fastTemplate will take the innerHTML of the templateNode passed in for use as the template.
+wrapperNode - This is the node that fastTemplate will append the final output to.
