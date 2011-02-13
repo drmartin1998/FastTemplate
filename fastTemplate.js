@@ -20,14 +20,7 @@ YUI.add('fastTemplate', function(Y) {
 				var myData = this.get('data');
 				var htmlSnip = this.get('templateNode').get('innerHTML');
 				Y.each(myData, function(i){
-					var evalString = '{';
-					for (var key in i) {
-						evalString += key + ": i."+key+","
-					}
-					evalString += '}';
-					Y.log('string:: ' + evalString);
-					eval("content += Y.substitute( htmlSnip, " + evalString + ");");
-					
+					content += Y.substitute( htmlSnip, i);	
 				}, this);
 				this.get('wrapperNode').set('innerHTML', content);
 			}
